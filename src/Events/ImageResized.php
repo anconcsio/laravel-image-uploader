@@ -9,6 +9,8 @@ class ImageResized implements ShouldBroadcastNow
     public $message;
     public $images;
 
+    protected $image;
+
     protected $notifyChannels;
 
     /**
@@ -18,6 +20,8 @@ class ImageResized implements ShouldBroadcastNow
      */
     public function __construct($image, $imageCopies)
     {
+        $this->image = $image;
+
         $this->message = 'Image ' . htmlspecialchars($image->original_name) . ' was resized';
         $this->images = $imageCopies;
         $this->notifyChannels = config('image-uploader.notify-channels', '');
@@ -41,5 +45,10 @@ class ImageResized implements ShouldBroadcastNow
     public function broadcastWhen()
     {
         return (boolean) $this->notifyChannels;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 }
