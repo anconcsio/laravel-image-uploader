@@ -34,12 +34,12 @@ php artisan vendor:publish --provider="Eval4VictoryCTO\LaravelImageUploader\Serv
 
 ## Using
 
-Run database job:
+Run database worker:
 
 ``` bash
 php artisan queue:work database --queue=image-uploader 
 ```
 
-Or change value of the config key image-uploader.queue-connection to "sync"
+Or change the value of the config key image-uploader.queue-connection to "sync"
 
 Visit /image-uploader url
