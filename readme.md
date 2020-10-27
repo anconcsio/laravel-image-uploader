@@ -7,7 +7,7 @@ composer config repositories.eval4victorycto/laravel-image-uploader vcs https://
 composer require eval4victorycto/laravel-image-uploader
 ```
 
-Put credentials in .env variables:
+Put credentials in `.env` variables:
 
 ``` 
 AWS_ACCESS_KEY_ID=
@@ -26,7 +26,7 @@ Run migrations:
 php artisan migrate
 ```
 
-Publish it to make changes (if required) to the package config at config/image-uploader.php
+Publish it to make changes (if required) to the package config at `config/image-uploader.php`
 
 ``` bash
 php artisan vendor:publish --provider="Eval4VictoryCTO\LaravelImageUploader\ServiceProvider"
@@ -40,6 +40,6 @@ Run database worker:
 php artisan queue:work database --queue=image-uploader 
 ```
 
-Or change the value of the config key image-uploader.queue-connection to "sync"
+Or change the value of the config key `image-uploader.queue-connection` to `sync`
 
-Visit /image-uploader url
+Visit `/image-uploader` url
